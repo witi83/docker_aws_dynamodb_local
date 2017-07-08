@@ -3,7 +3,7 @@
 #
 # https://aws.amazon.com/blogs/aws/dynamodb-local-for-desktop-development/
 #
-FROM openjdk:7-jre
+FROM openjdk:8-jre
 MAINTAINER Dean Giberson <dean@deangiberson.com>
 
 # Create working space
@@ -13,7 +13,7 @@ WORKDIR /var/dynamodb_wd
 EXPOSE 8000
 
 # Get the package from Amazon
-RUN wget -O /tmp/dynamodb_local_latest https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz && \
+RUN wget -O /tmp/dynamodb_local_latest https://s3.eu-central-1.amazonaws.com/dynamodb-local-frankfurt/dynamodb_local_latest.tar.gz && \
     tar xfz /tmp/dynamodb_local_latest && \
     rm -f /tmp/dynamodb_local_latest
 
